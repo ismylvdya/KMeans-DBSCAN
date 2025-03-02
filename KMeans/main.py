@@ -72,7 +72,8 @@ def plot_export_and_show(X, clusters, centers, cur_iter, save_path=None, is_iter
         full_path = os.path.join(save_path, str(cur_iter)+'iter.jpg')
 
         # Сохранение изображения в формате JPG
-        plt.savefig(full_path, format='jpg')
+        plt.savefig(full_path, format='jpg', dpi=150)  # 400 dpi увеличит разрешение в 4 раза
+
 
     plt.show() # в т.ч. для очистки полотна
 

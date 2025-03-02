@@ -223,32 +223,32 @@ dataset = scikit_datasets[3]  # (0-4)
 ##### прогонка DBSCAN для нескольких значений eps и m: #####
 ############################################################
 
-dbscan_running(0.1, 0.75, 8, 1, 25, dataset)
+# dbscan_running(0.1, 0.75, 8, 1, 25, dataset)
 
 
 ############################################################
 ##### прогонка DBSCAN для конкретных значений eps и m: #####
 ############################################################
 
-# # Запуск DBSCAN
-# eps = 0.38
-# m = 4
-# clusters = dbscan(dataset[0], eps, m, Euc_distance)  # Вызываем алгоритм DBSCAN
-#
-# # Сравнение нашей кластеризации с эталонной
-# clusters_list = our_clusterisation_but_etalon_like(dataset, clusters)
-# etalon_clusters_list = dataset[1].tolist()
-# (matches_count, diff_indexes) = matches_counts_in(clusters_list, etalon_clusters_list)
-#
-# # печать словаря получившихся кластеров
-# print_our_clusters(clusters)
-#
-# # вычистывание и печать точности (процент правильно кластеризированных точек)
-# accuracy = 100 * matches_count / points_count
-# print('accuracy:', accuracy)
-#
-# # Визуализация нашей кластеризации
-# plot_our_clusterisation(clusters, matches_count, eps, m)
-#
-# # Визуализация эталонной кластеризации
-# plot_etalon_clusterisation(dataset)
+# Запуск DBSCAN
+eps = 0.38
+m = 4
+clusters = dbscan(dataset[0], eps, m, Euc_distance)  # Вызываем алгоритм DBSCAN
+
+# Сравнение нашей кластеризации с эталонной
+clusters_list = our_clusterisation_but_etalon_like(dataset, clusters)
+etalon_clusters_list = dataset[1].tolist()
+(matches_count, diff_indexes) = matches_counts_in(clusters_list, etalon_clusters_list)
+
+# печать словаря получившихся кластеров
+print_our_clusters(clusters)
+
+# вычистывание и печать точности (процент правильно кластеризированных точек)
+accuracy = 100 * matches_count / points_count
+print('accuracy:', accuracy)
+
+# Визуализация нашей кластеризации
+plot_our_clusterisation(clusters, matches_count, eps, m)
+
+# Визуализация эталонной кластеризации
+plot_etalon_clusterisation(dataset)
